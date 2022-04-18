@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<header>
+  <title>CSV email domain counter</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  </style>
+</header>
+<body>
+  <button type="button" onclick="location.href = '/'">Go back</button>
+  <h3>Results:</h3>
+
+  <table>
+    <tr>
+      <th>Domain</th>
+      <th>Number of emails for domain</th>
+    </tr>
+    {{ range $key, $value := .Results}}
+      <tr>
+        <td>{{ $value.Domain }}</td>
+        <td>{{ $value.NumberOfEmailAddresses }}</td>
+      </tr>
+    {{ end }}
+    <tr>
+      <td>domain.com</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>domain.com</td>
+      <td>5</td>
+    </tr>
+  </table>
+
+  <span>Processing took: {{ .ProcessingTime }}ms</span>
+</body>

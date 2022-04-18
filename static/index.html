@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<header>
+  <title>CSV email domain counter</title>
+</header>
+<body>
+  <h1>CSV email domain counter</h1>
+  <p>
+    This application goes through a list of emails and returns a sorted list of all the domains
+    sorted by which one has the most emails related to it. The data input format is a CSV file that
+    has an 'email' column
+  </p>
+
+  <span>example CSV:</span>
+  <table>
+    <tr>
+      <td>first_name,</td>
+      <td>last_name,</td>
+      <td>email,</td>
+      <td>ip_address</td>
+    </tr>
+    <tr>
+      <td>Alice,</td>
+      <td>Alison,</td>
+      <td>alice@alisonblog.com,</td>
+      <td>192.168.1.1</td>
+    </tr>
+    <tr>
+      <td>Bob,</td>
+      <td>Brown,</td>
+      <td>bob@gmail.com,</td>
+      <td>192.168.1.1</td>
+    </tr>
+  </table>
+
+  <h3>Select a file to upload</h3>
+  <form
+      enctype="multipart/form-data"
+      action="http://localhost/upload"
+      method="post"
+    >
+      <div style="display: flex; flex-direction: column;">
+        <div>
+          <input type="file" name="csv" id="csv" accept=".csv">
+        </div>
+        <div style="margin-top: 1em">
+          <input type="submit" value="submit" />
+        </div>
+      </div>
+    </form>
+</body>
